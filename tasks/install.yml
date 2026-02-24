@@ -44,7 +44,7 @@
         force_source: "{{ valkey_container_image_force_pull if ansible_version.major > 2 or ansible_version.minor >= 8 else omit }}"
         force: "{{ omit if ansible_version.major > 2 or ansible_version.minor >= 8 else valkey_container_image_force_pull }}"
       register: valkey_container_image_pull_result
-      retries: "{{ retry_count }}"
+      retries: "{{ container_retry }}"
       delay: "{{ container_retry_delay }}"
       until: valkey_container_image_pull_result is not failed
 
@@ -53,7 +53,7 @@
       ansible.builtin.command:
         cmd: "{{ sysd_docker_host_command }} pull {{ valkey_container_image }}"
       register: valkey_container_image_pull_result
-      retries: "{{ retry_count }}"
+      retries: "{{ container_retry }}"
       delay: "{{ container_retry_delay }}"
       until: valkey_container_image_pull_result is not failed
       changed_when: "'Downloaded newer image' in valkey_container_image_pull_result.stdout"
