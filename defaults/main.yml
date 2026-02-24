@@ -14,8 +14,8 @@ valkey_version: 9.0.2
 valkey_uid: ""
 valkey_gid: ""
 
-valkey_container_image: "{{ valkey_container_image_registry_prefix }}valkey/valkey:{{ valkey_container_image_tag }}"
-valkey_container_image_tag: "{{ valkey_version }}-alpine"
+valkey_container_image: "{{ valkey_container_image_registry_prefix }}legitservices/valkey:{{ valkey_container_image_tag }}"
+valkey_container_image_tag: "{{ valkey_version }}"
 valkey_container_image_registry_prefix: "{{ valkey_container_image_registry_prefix_upstream }}"
 valkey_container_image_registry_prefix_upstream: "{{ valkey_container_image_registry_prefix_upstream_default }}"
 valkey_container_image_registry_prefix_upstream_default: docker.io/
