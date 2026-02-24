@@ -1,9 +1,9 @@
 ---
 galaxy_info:
-  author: mash
-  company: mash
+  author: Oneill
+  company: SGC
   role_name: valkey
-  namespace: mash
+  namespace: P3X-118
   description: Valkey
   platforms:
     - name: Debian
