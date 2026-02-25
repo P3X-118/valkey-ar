@@ -50,9 +50,9 @@ valkey_container_additional_networks_auto: []
 valkey_container_additional_networks_custom: []
 
 # Controls how long to wait for the container to stop gracefully before killing it.
-# Because `devture_systemd_docker_base_container_stop_grace_time_seconds` may be quite short and databases are more important to stop gracefully,
+# Because `sysd_docker_stop_grace` may be quite short and databases are more important to stop gracefully,
 # we default to at least 30 seconds.
-valkey_container_stop_grace_time_seconds: "{{ [devture_systemd_docker_base_container_stop_grace_time_seconds, 30] | max }}"
+valkey_container_stop_grace_time_seconds: "{{ [sysd_docker_stop_grace, 30] | max }}"
 
 # Specify the size of the container's tmpfs volume
 valkey_container_tmpfs_tmp_size: 128m
